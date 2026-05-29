@@ -111,6 +111,7 @@ app.get("/api/users/:userid/balance", (req, res) => {
 // place order
 app.post("/api/orders", createOrder);
 
+// get user position
 app.get("/api/users/:userId/positions", (req, res) => {
   try {
     const userId = req.params.userId;

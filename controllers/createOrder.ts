@@ -20,9 +20,9 @@ export const createOrder: RequestHandler = (req, res) => {
     });
   }
 
-  const orderbook = ORDERBOOKS.get(symbol);
-  const asks = orderbook?.asks;
-  const bids = orderbook?.bids;
+  const orderbook = ORDERBOOKS.get(symbol)!;
+  const asks = orderbook.asks;
+  const bids = orderbook.bids;
 
   if (type === "limit") {
     if (side === "long") {
@@ -46,10 +46,10 @@ export const createOrder: RequestHandler = (req, res) => {
       userBalance.availableBalance -= margin;
       userBalance.lockedMargin += margin;
 
-      if (asks?.length === 0) {
+      if (asks.length === 0) {
         const orderId = crypto.randomUUID();
 
-        bids?.push({
+        bids.push({
           orderId,
           userId,
           price,
