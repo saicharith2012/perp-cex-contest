@@ -1,0 +1,21 @@
+{
+  "name": "perp-cex-contest",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun run index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/express": "^5.0.6"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "vitest": "^4.1.7",
+    "zod": "^4.4.3"
+  }
+}
